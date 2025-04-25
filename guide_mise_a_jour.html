@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide de mise à jour du site GitHub | L'IA en Médecine</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .guide-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .guide-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .guide-section h3 {
+            color: var(--secondary-color);
+            margin: 25px 0 15px;
+        }
+        
+        .step-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+        
+        .step-title {
+            display: inline-block;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            vertical-align: middle;
+        }
+        
+        .step-content {
+            margin-top: 20px;
+            padding-left: 55px;
+        }
+        
+        .code-block {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .tip {
+            background-color: #d1e7dd;
+            border-left: 4px solid #198754;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .warning {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .screenshot {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <img src="images/banner.png" alt="Marathon de l'IA">
+        </div>
+        <div class="logo-container">
+            <img src="images/logo-Transparent1.png" alt="Systinfo Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#introduction">Introduction</a></li>
+                <li><a href="index.html#diagnostic">Diagnostic IA</a></li>
+                <li><a href="index.html#suivi">Suivi Patient</a></li>
+                <li><a href="index.html#automatisation">Automatisation</a></li>
+                <li><a href="index.html#ethique">Enjeux Éthiques</a></li>
+                <li><a href="index.html#systinfo">Systinfo.ai</a></li>
+                <li><a href="pdf/presentation_ia_medecine.pdf" target="_blank">Présentation PDF</a></li>
+                <li><a href="reglementation.html">Réglementation IA Afrique</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="guide-hero">
+            <div class="container">
+                <h1>Guide de mise à jour du site GitHub</h1>
+                <h2>Instructions détaillées pour déployer et mettre à jour votre site</h2>
+                <p class="tagline">Suivez ce guide étape par étape pour mettre à jour facilement votre site sur GitHub Pages</p>
+            </div>
+        </section>
+
+        <section class="guide-section">
+            <div class="container">
+                <h2>Déploiement initial sur GitHub Pages</h2>
+                
+                <div class="step-container">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Créer un nouveau dépôt sur GitHub</div>
+                    <div class="step-content">
+                        <ol>
+                            <li>Connectez-vous à votre compte GitHub</li>
+                            <li>Cliquez sur le bouton "+" en haut à droite, puis sélectionnez "New repository"</li>
+                            <li>Nommez votre dépôt (par exemple : <code>ia-medecine</code>)</li>
+                            <li>Choisissez l'option "Public" pour que le site soit accessible à tous</li>
+                            <li>Ne cochez pas l'option "Initialize this repository with a README"</li>
+                            <li>Cliquez sur "Create repository"</li>
+                        </ol>
+                        <div class="tip">
+                            <strong>Astuce :</strong> Si vous souhaitez que votre site soit accessible à l'adresse <code>username.github.io</code> (sans sous-dossier), nommez votre dépôt exactement <code>username.github.io</code> (où username est votre nom d'utilisateur GitHub).
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-container">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Télécharger les fichiers du site web sur GitHub</div>
+                    <div class="step-content">
+                        <h3>Option 1 : Via l'interface web de GitHub</h3>
+                        <ol>
+                            <li>Sur la page de votre nouveau dépôt, cliquez sur "uploading an existing file"</li>
+                            <li>Décompressez le fichier <code>ia_medecine_site.zip</code> sur votre ordinateur</li>
+                            <li>Faites glisser tous les fichiers et dossiers du site web dans la zone de dépôt de GitHub</li>
+                            <li>Ajoutez un message de commit comme "Initial commit - Site web IA en médecine"</li>
+                            <li>Cliquez sur "Commit changes"</li>
+                        </ol>
+                        
+                        <h3>Option 2 : Via Git en ligne de commande (pour utilisateurs avancés)</h3>
+                        <ol>
+                            <li>Décompressez le fichier <code>ia_medecine_site.zip</code> sur votre ordinateur</li>
+                            <li>Ouvrez un terminal et naviguez vers le dossier contenant les fichiers du site</li>
+                            <li>Exécutez les commandes suivantes :</li>
+                        </ol>
+                        <div class="code-block">
+                            git init<br>
+                            git add .<br>
+                            git commit -m "Initial commit - Site web IA en médecine"<br>
+                            git branch -M main<br>
+                            git remote add origin https://github.com/VOTRE-NOM-UTILISATEUR/ia-medecine.git<br>
+                            git push -u origin main
+                        </div>
+                        <div class="note">
+                            <strong>Note :</strong> Remplacez <code>VOTRE-NOM-UTILISATEUR</code> par votre nom d'utilisateur GitHub et <code>ia-medecine</code> par le nom de votre dépôt si différent.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-container">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Activer GitHub Pages</div>
+                    <div class="step-content">
+                        <ol>
+                            <li>Sur la page de votre dépôt, cliquez sur "Settings" (onglet avec l'icône d'engrenage)</li>
+                            <li>Dans le menu de gauche, cliquez sur "Pages" (sous la section "Code and automation")</li>
+                            <li>Dans la section "Source", sélectionnez "Deploy from a branch"</li>
+                            <li>Dans la section "Branch", sélectionnez "main" et "/root", puis cliquez sur "Save"</li>
+                            <li>Attendez quelques minutes que GitHub déploie votre site</li>
+                            <li>Rafraîchissez la page, vous verrez un message indiquant "Your site is published at https://VOTRE-NOM-UTILISATEUR.github.io/ia-medecine/"</li>
+                        </ol>
+                        <div class="warning">
+                            <strong>Attention :</strong> Le déploiement peut prendre jusqu'à 10 minutes. Si votre site n'est pas accessible après ce délai, vérifiez que la structure de vos fichiers est correcte et que le fichier index.html est bien à la racine du dépôt.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-container">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Vérifier le déploiement</div>
+                    <div class="step-content">
+                        <ol>
+                            <li>Cliquez sur le lien fourni par GitHub (https://VOTRE-NOM-UTILISATEUR.github.io/ia-medecine/)</li>
+                            <li>Vérifiez que toutes les pages et fonctionnalités du site fonctionnent correctement</li>
+                            <li>Testez la navigation et l'affichage sur différents appareils (ordinateur, tablette, smartphone)</li>
+                        </ol>
+                        <div class="tip">
+                            <strong>Astuce :</strong> Utilisez les outils de développement de votre navigateur (F12) pour vérifier s'il y a des erreurs dans la console qui pourraient indiquer des problèmes avec votre site.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="guide-section" style="background-color: white;">
+            <div class="container">
+                <h2>Mettre à jour votre site</h2>
+                
+                <div class="step-container">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Télécharger les fichiers mis à jour</div>
+                    <div class="step-content">
+                        <h3>Option 1 : Via l'interface web de GitHub</h3>
+                        <ol>
+                            <li>Naviguez vers votre dépôt GitHub</li>
+                            <li>Pour chaque fichier que vous souhaitez mettre à jour :</li>
+                            <ul>
+                                <li>Cliquez sur le fichier pour l'ouvrir</li>
+                                <li>Cliquez sur l'icône de crayon (Edit this file) en haut à droite</li>
+                                <li>Effectuez vos modifications</li>
+                                <li>Faites défiler jusqu'en bas et ajoutez un message de commit</li>
+                                <li>Cliquez sur "Commit changes"</li>
+                            </ul>
+                            <li>Pour ajouter de nouveaux fichiers, cliquez sur "Add file" puis "Upload files" depuis la page principale du dépôt</li>
+                        </ol>
+                        
+                        <h3>Option 2 : Via Git en ligne de commande (recommandé pour les mises à jour importantes)</h3>
+                        <ol>
+                            <li>Clonez d'abord votre dépôt si ce n'est pas déjà fait :</li>
+                        </ol>
+                        <div class="code-block">
+                            git clone https://github.com/VOTRE-NOM-UTILISATEUR/ia-medecine.git<br>
+                            cd ia-medecine
+                        </div>
+                        <ol start="2">
+                            <li>Effectuez vos modifications localement</li>
+                            <li>Ajoutez, committez et poussez vos changements :</li>
+                        </ol>
+                        <div class="code-block">
+                            git add .<br>
+                            git commit -m "Mise à jour du site - Description des changements"<br>
+                            git push origin main
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-container">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Mettre à jour la présentation PDF</div>
+                    <div class="step-content">
+                        <ol>
+                            <li>Assurez-vous que votre nouvelle présentation PowerPoint est convertie en PDF</li>
+                            <li>Remplacez le fichier PDF existant dans le dossier <code>pdf</code> de votre dépôt</li>
+                            <li>Si vous utilisez l'interface web de GitHub :</li>
+                            <ul>
+                                <li>Naviguez vers le dossier <code>pdf</code></li>
+                                <li>Cliquez sur le fichier PDF existant</li>
+                                <li>Cliquez sur "Delete this file" (icône de corbeille)</li>
+                                <li>Committez la suppression</li>
+                                <li>Retournez au dossier <code>pdf</code> et cliquez sur "Add file" puis "Upload files"</li>
+                                <li>Téléversez votre nouveau fichier PDF</li>
+                                <li>Committez l'ajout</li>
+                            </ul>
+                        </ol>
+                        <div class="tip">
+                            <strong>Astuce :</strong> Pour maintenir la compatibilité des liens, assurez-vous que le nouveau fichier PDF a exactement le même nom que l'ancien.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-container">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Ajouter la page sur la réglementation de l'IA en Afrique</div>
+                    <div class="step-content">
+                        <ol>
+                            <li>Assurez-vous que le fichier <code>reglementation.html</code> est bien présent à la racine de votre dépôt</li>
+                            <li>Vérifiez que les liens vers cette page sont correctement configurés dans les autres pages du site</li>
+                            <li>Si vous utilisez l'interface web de GitHub, téléversez le fichier comme expliqué précédemment</li>
+                        </ol>
+                        <div class="note">
+                            <strong>Note :</strong> Si vous avez déjà une page sur la réglementation mais souhaitez la mettre à jour, suivez les instructions de mise à jour de fichiers ci-dessus.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-container">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Vérifier les mises à jour</div>
+                    <div class="step-content">
+                        <ol>
+                            <li>Attendez quelques minutes que GitHub Pages redéploie votre site</li>
+                            <li>Visitez votre site à l'adresse https://VOTRE-NOM-UTILISATEUR.github.io/ia-medecine/</li>
+                            <li>Vérifiez que toutes les mises à jour apparaissent correctement</li>
+                            <li>Testez les nouveaux liens et fonctionnalités</li>
+                            <li>Vérifiez que la présentation PDF mise à jour est accessible</li>
+                        </ol>
+                        <div class="warning">
+                            <strong>Attention :</strong> Si les mises à jour n'apparaissent pas, essayez de vider le cache de votre navigateur ou d'ouvrir le site en mode navigation privée.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="guide-section">
+            <div class="container">
+                <h2>Résolution des problèmes courants</h2>
+                
+                <div class="step-container">
+                    <h3>Images manquantes</h3>
+                    <div class="step-content">
+                        <p>Si certaines images ne s'affichent pas sur votre site déployé :</p>
+                        <ol>
+                            <li>Vérifiez que les chemins des images dans votre code HTML sont relatifs et corrects</li>
+                            <li>Assurez-vous que les images sont bien présentes dans le dépôt GitHub</li>
+                            <li>Vérifiez que la casse (majuscules/minuscules) des noms de fichiers correspond exactement</li>
+                        </ol>
+                        <div class="code-block">
+                            <!-- Exemple de chemin correct -->
+                            &lt;img src="images/logo.png" alt="Logo"&gt;<br>
+                            <!-- Exemple de chemin incorrect -->
+                            &lt;img src="/images/logo.png" alt="Logo"&gt; <!-- Le / initial peut causer des problèmes -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-container">
+                    <h3>Problèmes de CSS</h3>
+                    <div class="step-content">
+                        <p>Si le style de votre site ne s'affiche pas correctement :</p>
+                        <ol>
+                            <li>Vérifiez que les liens vers les fichiers CSS sont relatifs</li>
+                            <li>Assurez-vous que les fichiers CSS sont bien présents dans le dépôt GitHub</li>
+                            <li>Inspectez la console du navigateur pour voir s'il y a des erreurs 404 pour les fichiers CSS</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="step-container">
+                    <h3>Site non mis à jour</h3>
+                    <div class="step-content">
+                        <p>Si votre site ne reflète pas les dernières modifications :</p>
+                        <ol>
+                            <li>Attendez quelques minutes (jusqu'à 10 minutes) pour que GitHub Pages redéploie votre site</li>
+                            <li>Videz le cache de votre navigateur (Ctrl+F5 ou Cmd+Shift+R)</li>
+                            <li>Vérifiez dans l'onglet "Actions" de votre dépôt GitHub que le déploiement a bien été effectué</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="step-container">
+                    <h3>Erreur 404 - Page non trouvée</h3>
+                    <div class="step-content">
+                        <p>Si vous obtenez une erreur 404 en accédant à votre site :</p>
+                        <ol>
+                            <li>Vérifiez que GitHub Pages est bien activé dans les paramètres de votre dépôt</li>
+                            <li>Assurez-vous que le fichier index.html est bien à la racine du dépôt</li>
+                            <li>Vérifiez que l'URL que vous utilisez est correcte (attention à la casse)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="guide-section" style="background-color: white;">
+            <div class="container">
+                <h2>Ressources supplémentaires</h2>
+                
+                <div class="step-container">
+                    <div class="step-content">
+                        <ul>
+                            <li><a href="https://docs.github.com/en/pages" target="_blank">Documentation officielle de GitHub Pages</a></li>
+                            <li><a href="https://git-scm.com/doc" target="_blank">Documentation Git</a></li>
+                            <li><a href="https://www.markdownguide.org/" target="_blank">Guide Markdown</a></li>
+                            <li><a href="https://html.com/" target="_blank">Ressources HTML</a></li>
+                        </ul>
+                        
+                        <div style="text-align: center; margin-top: 40px;">
+                            <a href="index.html" style="display: inline-block; background-color: var(--primary-color); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: all 0.3s ease;">Retour à l'accueil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-Transparent1.png" alt="Systinfo Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-links">
+                    <h3>Navigation rapide</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#introduction">Introduction</a></li>
+                        <li><a href="index.html#diagnostic">Diagnostic IA</a></li>
+                        <li><a href="index.html#suivi">Suivi Patient</a></li>
+                        <li><a href="index.html#automatisation">Automatisation</a></li>
+                        <li><a href="index.html#ethique">Enjeux Éthiques</a></li>
+                        <li><a href="index.html#systinfo">Systinfo.ai</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> contact@systinfo.ai</p>
+                    <p><i class="fas fa-globe"></i> www.systinfo.ai</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Marathon de l'IA | Systinfo.ai - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
